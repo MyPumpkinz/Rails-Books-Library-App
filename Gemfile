@@ -63,7 +63,20 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem "spring"
+end
+
+gem 'sass-rails', '~> 6.0'
+gem 'devise', '>= 4.8.1'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 5.0'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'sdoc', '~> 2.4', group: :doc
+
+group :development, :test do
+  gem 'byebug'
 end
 
 group :test do
