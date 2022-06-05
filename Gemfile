@@ -74,6 +74,7 @@ gem 'coffee-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sdoc', '~> 2.4', group: :doc
+gem 'simple_form', '~> 5.1'
 
 group :development, :test do
   gem 'byebug'
