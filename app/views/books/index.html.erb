@@ -1,3 +1,13 @@
 <% @books.each do |book| %>
-  <h2> <%= link_to book.title, book_path(book) %></h2>
+   <% if user_signed_in? %>
+			<% if current_user %>
+        <% if current_user.admin? %>
+          <h2> <%= link_to book.title, book_path(book) %></h2>
+        <% else current_user.user?%>
+          <h2> <%= link_to book.title, book_path(book) %></h2>
+        <% end %>
+      <% end %>
+		<% else %>
+      <h2> <%= link_to book.title, book_path(book) %></h2>
+	 <% end %>
 <% end %>
