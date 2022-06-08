@@ -44,6 +44,30 @@ p.alert, p.notice {
 	margin: 0;
 }
 
+.col-md-3 figcaption {
+  box-sizing: border-box;
+  position: absolute;
+	padding: 10px 5px;
+  margin-right: 20px;
+  text-align:center;
+	text-decoration: none;
+	border:1px solid black;
+	color: #000;
+  background: white;
+	transition: 0.10s;
+	transform: translateY(-100px);
+	opacity: 0;
+	visibility: hidden;
+  &:hover {
+  }
+}
+
+.col-md-3:hover figcaption{
+	transform: translateY(-100px);
+	opacity: 1;
+	visibility: visible;
+}
+
 
 /* Navbar/navigation styles */
 
@@ -90,12 +114,13 @@ p.alert, p.notice {
 	color: #fff;
 }
 
-
 /* Button/link styles */
 
 .links {
 
-  margin: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 0;
   background-color: #fff;
   font-family: 'Ubuntu', sans-serif;
   padding: 8px 20px;
@@ -107,6 +132,17 @@ p.alert, p.notice {
 	&:hover {
 		text-decoration: none;
 		background-color: darken(#f1c40f, 5%);
+		color: #fff;
+		transition: 0.5s;
+	}
+}
+
+.btn-custom-download {
+	color: darken(#18497d, 5%);
+	border: 1px solid darken(#18497d, 5%);
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#18497d, 5%);
 		color: #fff;
 		transition: 0.5s;
 	}

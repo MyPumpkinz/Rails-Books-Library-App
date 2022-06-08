@@ -1,29 +1,33 @@
-<div class="row">
-  <div class="col-md-4">
-    <% if @book.image.attached? %>
-      <%= image_tag @book.image, class:"book-show"%>
-    <% end %>
-  </div>
-
-  <div class="col-md-8">
-    <div class="book-info">
-      <h1 class="book-title"> Title : <%= @book.title  %></h1>
-      <h3 class="book-category"><%= @book.category.name %></h3>
-      <p class="book-desc"><%= @book.description %></p>
-      <h3 class="book-author"><span> From : </span><%= @book.author %></h3>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-md-4 offset-md-3">
+      <% if @book.image.attached? %>
+        <%= image_tag @book.image, class:"book-show"%>
+      <% end %>
+      <div class="links">
+        <%= link_to "Back", root_path, class: "btn btn-custom"%>
+          
+        <% if user_signed_in? %>
+          <% if current_user %>
+            <% if current_user.admin? %>
+              <%= link_to "Edit", edit_book_path(@book), class:'btn btn-custom-edit' %>
+              <%= link_to "Delete", book_path(@book),data: { confirm: "Are you sure?" }, method: :delete, class:'btn btn-custom-delete' %>
+              <%= link_to "Download", root_path, class: "btn btn-custom-download"%>
+            <% else %>
+              <%= link_to "Download", root_path,data: { confirm: "buy this book for $15" }, class: "btn btn-custom-download"%>
+            <% end %>
+          <% end %>    
+        <% end %>
+      </div>
+    </div>
+  
+    <div class="col-md-8">
+      <div class="book-info">
+        <h1 class="book-title"><%= @book.title%></h1>
+        <h3 class="book-category"><%= @book.category.name %></h3>
+        <p class="book-desc"><%= @book.description %></p>
+        <h3 class="book-author"><span> From : </span><%= @book.author %></h3>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="links">
-  <%= link_to "Back", root_path, class: "btn btn-custom"%>
-    
-  <% if user_signed_in? %>
-    <% if current_user %>
-      <% if current_user.admin? %>
-        <%= link_to "Edit", edit_book_path(@book), class:'btn btn-custom-edit' %>
-        <%= link_to "Delete", book_path(@book),data: { confirm: "Are you sure?" }, method: :delete, class:'btn btn-custom-delete' %>
-      <% end %>
-    <% end %>    
-  <% end %>
 </div>
