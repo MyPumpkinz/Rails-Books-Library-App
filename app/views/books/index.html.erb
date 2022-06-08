@@ -10,7 +10,7 @@
           <% else current_user.user?%>
             <div class="col-md-3">
               <a href=/books/<%= book.id %>">
-                <%= image_tag book.image, style: "width:200px; display:block;" %>
+                <%= image_tag book.image, class:"book" %>
               </a>
             </div>
           <% end %>
@@ -18,7 +18,7 @@
   		<% else %>
            <div class="col-md-3">
               <a href=/books/<%= book.id %>">
-                <%= image_tag book.image, style: "width:200px; display:block;" %>
+                <%= image_tag book.image, class:"book" %>
               </a>
             </div>
       <% end %>
