@@ -11,6 +11,8 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:id])
+    fresh_when etag: @book
   end
 
   def new
@@ -49,7 +51,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :description, :author, :category_id)
+    params.require(:book).permit(:title, :description, :author, :category_id, :image)
   end
 
   def find_book

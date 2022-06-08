@@ -73,7 +73,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '3543363026121ee28d98dfce4cb6366980c055ee'
-gem 'carrierwave', '~> 0.11.2'
+gem 'activestorage'
 gem 'turbolinks'
 gem 'sdoc', '~> 2.4', group: :doc
 gem 'simple_form', '~> 5.1'

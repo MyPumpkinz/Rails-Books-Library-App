@@ -1,8 +1,12 @@
-<h2> <%= @book.title %></h2>
-<h2> <%= @book.description %></h2>
-<h2> Category :<%= @book.category.name %></h2>
+<% if @book.image.attached? %>
+  <%= image_tag @book.image, style: "width:200px; display:block;" %>
+<% end %>
 <h2> <%= @book.author %></h2>
 
+<h2> <%= @book.title %></h2>
+<h2> Category :<%= @book.category.name %></h2>
+<h2> <%= @book.description %></h2>
+  
 <%= link_to "Back", root_path, class:'btn btn-secondary'%>
   
 <% if user_signed_in? %>
