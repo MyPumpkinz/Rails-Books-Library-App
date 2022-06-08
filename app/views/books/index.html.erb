@@ -1,13 +1,31 @@
-<% @books.each do |book| %>
-   <% if user_signed_in? %>
-			<% if current_user %>
-        <% if current_user.admin? %>
-          <h2> <%= link_to book.title, book_path(book) %></h2>
-        <% else current_user.user?%>
-          <h2> <%= link_to book.title, book_path(book) %></h2>
+<h1 class="current-category"><%= params[:category] %></h1>
+
+<% if @books.count > 0 %>
+
+  <% @books.each do |book| %>
+      <% if user_signed_in? %>
+  			<% if current_user %>
+          <% if current_user.admin? %>
+            <h2> <%= link_to book.title, book_path(book) %></h2>
+          <% else current_user.user?%>
+            <div class="col-md-3">
+              <a href=/books/<%= book.id %>">
+                <%= image_tag book.image, style: "width:200px; display:block;" %>
+              </a>
+            </div>
+          <% end %>
         <% end %>
+  		<% else %>
+           <div class="col-md-3">
+              <a href=/books/<%= book.id %>">
+                <%= image_tag book.image, style: "width:200px; display:block;" %>
+              </a>
+            </div>
       <% end %>
-		<% else %>
-      <h2> <%= link_to book.title, book_path(book) %></h2>
-	 <% end %>
+  <% end %>
+
+<% else %>
+
+  <h1>There are no books currently in this category</h1>
+  
 <% end %>
