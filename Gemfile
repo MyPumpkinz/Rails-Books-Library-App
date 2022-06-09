@@ -69,6 +69,7 @@ end
 gem 'sass-rails', '~> 6.0'
 gem 'devise', '>= 4.8.1'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'bootstrap', '~> 4.5.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 5.0'
 gem 'jquery-rails'
