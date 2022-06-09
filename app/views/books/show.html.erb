@@ -14,7 +14,7 @@
               <%= link_to "Delete", book_path(@book),data: { confirm: "Are you sure?" }, method: :delete, class:'btn btn-custom-delete' %>
               <%= link_to "Download", root_path, class: "btn btn-custom-download"%>
             <% else %>
-              <%= link_to "Download", root_path,data: { confirm: "buy this book for $15" }, class: "btn btn-custom-download"%>
+              <%= link_to "Download", root_path, data: { confirm: "buy this book for $#{@book.price}" }, class: "btn btn-custom-download"%>
             <% end %>
           <% end %>    
         <% end %>
@@ -27,6 +27,7 @@
         <h3 class="book-category"><%= @book.category.name %></h3>
         <p class="book-desc"><%= @book.description %></p>
         <h3 class="book-author"><span> From : </span><%= @book.author %></h3>
+        <h3 class="book-price"><span>$</span><%= @book.price %></h3>
       </div>
     </div>
   </div>

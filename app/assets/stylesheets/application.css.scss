@@ -203,6 +203,17 @@ p.alert, p.notice {
 	@include background-tile;
 }
 
+.book-admin {
+	height: 150px;
+	width: 100px;
+	margin-bottom: 20px;
+  box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px 4px #ccc;
+	padding: 5px 3px;
+}
+
 .book-show {
 	height: 475px;
 	width: 325px;
@@ -217,7 +228,7 @@ p.alert, p.notice {
 		font-size: 2em;
 	}
 
-	.book-author, .book-category {
+	.book-author, .book-category, .book-price {
 		font-size: 1.5em;
 		margin-top: 10px;
 		margin-bottom: 10px;
