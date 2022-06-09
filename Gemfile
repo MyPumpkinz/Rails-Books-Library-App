@@ -77,7 +77,6 @@ gem 'activestorage'
 gem 'turbolinks'
 gem 'sdoc', '~> 2.4', group: :doc
 gem 'simple_form', '~> 5.1'
-gem 'data-confirm-modal'
 
 group :development, :test do
   gem 'byebug'
