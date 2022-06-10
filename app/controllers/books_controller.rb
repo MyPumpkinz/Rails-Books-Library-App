@@ -14,7 +14,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     fresh_when etag: @book
   end
-
+  
   def new
     @book = Book.new
     @categories = Category.all.map{ |c| [c.name, c.id] }

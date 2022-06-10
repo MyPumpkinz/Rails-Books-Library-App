@@ -9,12 +9,8 @@
           
         <% if user_signed_in? %>
           <% if current_user %>
-            <% if current_user.admin? %>
-              <%= link_to "Edit", edit_book_path(@book), class:'btn btn-custom-edit' %>
-              <%= link_to "Delete", book_path(@book),data: { confirm: "Are you sure?" }, method: :delete, class:'btn btn-custom-delete' %>
-              <%= link_to "Download", root_path, class: "btn btn-custom-download"%>
-            <% else %>
-              <button type="button" class="btn btn-custom-download" data-toggle="modal" data-target="#Modal">Download</button>
+            <% if current_user.user? %>
+              <button type="button" class="btn btn-custom-download" data-toggle="modal" data-target="#Modal">Add Your Review!</button>
               <!-- Modal -->
               <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
