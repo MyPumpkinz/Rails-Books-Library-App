@@ -78,6 +78,8 @@ gem 'activestorage'
 gem 'turbolinks'
 gem 'sdoc', '~> 2.4', group: :doc
 gem 'simple_form', '~> 5.1'
+gem 'font-awesome-sass', '~> 6.1', '>= 6.1.1'
+gem "ransack", "~> 3.2"
 
 group :development, :test do
   gem 'byebug'
@@ -90,4 +92,3 @@ group :test do
   gem "webdrivers"
 end
 
-gem "ransack", "~> 3.2"
