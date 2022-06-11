@@ -92,8 +92,8 @@ p.alert, p.notice {
 	.navbar-header {
 
 		.navbar-brand {
-			color: #222;
-			letter-spacing: 1.4px;
+      margin-top:-10px;
+			height:70px;
 		}
 
 	}
@@ -193,6 +193,11 @@ p.alert, p.notice {
 		margin-top: 40px;	
 	}
 
+}
+
+.form-group {
+  margin-top:10px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 /* Book styles */

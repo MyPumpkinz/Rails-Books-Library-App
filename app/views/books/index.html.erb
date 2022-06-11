@@ -1,5 +1,4 @@
 <div class="container">
-  <li><%= render 'search/form' %></li>
   <h1 class="current-category"><%= params[:category] %></h1>
   
   <% if current_user %>
@@ -36,9 +35,9 @@
     <% else %>
       <% @books.each do |book| %>
          <div class="col-md-3">
-            <a href=/books/<%= book.id %>">
+            <a href="/books/<%= book.id %>" data-bs-toggle="popover" title="<%= book.title %>">
               <%= image_tag book.image, class:"book" %>
-              <figcaption><%= book.title %></figcaption>
+              <!-- <figcaption><%= book.title %></figcaption> -->
             </a>
           </div>
       <% end %>
