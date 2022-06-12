@@ -254,12 +254,12 @@ p.alert, p.notice {
 }
 
 .book-info-content {
-  font-family: 'Ubuntu', sans-serif;
   margin-top: 30px;
 	@include background-tile;
 
   p {
     white-space: pre-line;
+    text-indent: 30px;
   }
 
 	.book-content {
