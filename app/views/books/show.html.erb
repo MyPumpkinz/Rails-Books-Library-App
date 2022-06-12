@@ -12,7 +12,7 @@
             <% if current_user.admin? %>
               <%= link_to "Edit", edit_book_path(@book), class:'btn btn-custom-edit' %>
               <%= link_to "Delete", book_path(@book),data: { confirm: "Are you sure?" }, method: :delete, class:'btn btn-custom-delete' %>
-              <%= link_to "Download", root_path, class: "btn btn-custom-download"%>
+                <%= link_to "Download", download_path(@book) , class: "btn btn-custom-download"%>
             <% else %>
               <button type="button" class="btn btn-custom-download" data-toggle="modal" data-target="#Modal">Download</button>
               <!-- Modal -->
@@ -30,7 +30,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <%= link_to "Buy", root_path, class: "btn btn-primary"%>
+                      <%= link_to "Buy", download_path(book), class: "btn btn-primary"%>
                     </div>
                   </div>
                 </div>
