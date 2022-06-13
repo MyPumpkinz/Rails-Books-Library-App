@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :reviews
+  has_many :books
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum role: [:user, :admin]
