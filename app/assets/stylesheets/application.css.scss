@@ -118,71 +118,68 @@ p.alert, p.notice {
 /* Button/link styles */
 
 .links {
-
   margin-top: 10px;
   margin-right: 10px;
-  margin-left: 0;
   background-color: #fff;
   font-family: 'Ubuntu', sans-serif;
-  padding: 8px 20px;
 	border-radius: 5px;
 
-.btn-custom {
-	color: darken(#f1c40f, 5%);
-	border: 1px solid darken(#f1c40f, 5%);
-	&:hover {
-		text-decoration: none;
-		background-color: darken(#f1c40f, 5%);
-		color: #fff;
-		transition: 0.5s;
-	}
-}
-
-.btn-custom-download {
-	color: darken(#18497d, 5%);
-	border: 1px solid darken(#18497d, 5%);
-	&:hover {
-		text-decoration: none;
-		background-color: darken(#18497d, 5%);
-		color: #fff;
-		transition: 0.5s;
-	}
-}
-
-.btn-custom-submit {
-	background-color: darken(#13d440, 5%);
-	border: 1px solid darken(#0d9e2f, 5%);
-  color: #fff;
-	&:hover {
-		text-decoration: none;
-		background-color: darken(#0d9e2f, 5%);
-		color: #fff;
-		transition: 0.5s;
-	}
-}
-
-.btn-custom-edit {
-	color: darken(#0d5d9e, 5%);
-	border: 1px solid darken(#0d5d9e, 5%);
-	&:hover {
-		text-decoration: none;
-		background-color: darken(#0d5d9e, 5%);
-		color: #fff;
-		transition: 0.5s;
-	}
-}
-
-.btn-custom-delete {
-	color: darken(#9e0d16, 5%);
-	border: 1px solid darken(#9e0d16, 5%);
-	&:hover {
-		text-decoration: none;
-		background-color: darken(#9e0d16, 5%);
-		color: #fff;
-		transition: 0.5s;
-	}
-}
-
+  .btn-custom {
+  	color: darken(#f1c40f, 5%);
+  	border: 1px solid darken(#f1c40f, 5%);
+  	&:hover {
+  		text-decoration: none;
+  		background-color: darken(#f1c40f, 5%);
+  		color: #fff;
+  		transition: 0.5s;
+  	}
+  }
+  
+  .btn-custom-download {
+  	color: darken(#18497d, 5%);
+  	border: 1px solid darken(#18497d, 5%);
+  	&:hover {
+  		text-decoration: none;
+  		background-color: darken(#18497d, 5%);
+  		color: #fff;
+  		transition: 0.5s;
+  	}
+  }
+  
+  .btn-custom-submit {
+  	background-color: darken(#13d440, 5%);
+  	border: 1px solid darken(#0d9e2f, 5%);
+    color: #fff;
+  	&:hover {
+  		text-decoration: none;
+  		background-color: darken(#0d9e2f, 5%);
+  		color: #fff;
+  		transition: 0.5s;
+  	}
+  }
+  
+  .btn-custom-edit {
+  	color: darken(#0d5d9e, 5%);
+  	border: 1px solid darken(#0d5d9e, 5%);
+  	&:hover {
+  		text-decoration: none;
+  		background-color: darken(#0d5d9e, 5%);
+  		color: #fff;
+  		transition: 0.5s;
+  	}
+  }
+  
+  .btn-custom-delete {
+  	color: darken(#9e0d16, 5%);
+  	border: 1px solid darken(#9e0d16, 5%);
+  	&:hover {
+  		text-decoration: none;
+  		background-color: darken(#9e0d16, 5%);
+  		color: #fff;
+  		transition: 0.5s;
+  	}
+  }
+  
 }
 
 .book-links {
@@ -244,6 +241,17 @@ p.alert, p.notice {
 		}	
 	}
 
+  .avg-rating {
+		font-size: 1.5em;
+		margin-top: 15px;
+		margin-bottom: 5px;
+	}
+
+	.number-of-reviews {
+		font-size: 0.85em;
+		font-style: italic;
+	}
+
 	.book-desc {
 		font-size: 1.05em;
 		line-height: 1.5;
@@ -269,6 +277,12 @@ p.alert, p.notice {
 		margin-bottom: 15px;
 		margin-top: 7px;
 	}
+}
+
+.book-info-review {
+  margin-top: 30px;
+	@include background-tile;
+  width: 330px;
 }
 
 
@@ -315,6 +329,57 @@ p.alert, p.notice {
 
 	#book_image {
 		margin-bottom: 10px;
+	}
+
+}
+
+/* Reviews styles */
+
+.reviews {
+
+	@include background-tile;
+	margin-top: 40px;
+  
+	h1 {
+		margin-top: 0;
+		margin-bottom: 15px;
+		font-size: 2em;
+	}
+
+	.review {
+		border-bottom: 1px solid gainsboro;
+		margin-bottom: 15px;
+		padding-bottom: 10px;
+
+		.review-comment {
+			font-size: 1.05em;
+			line-height: 1.5;
+    }
+
+	}
+
+	.new-review {
+		padding-top: 8px;
+	}
+
+}
+
+/* New/Edit review form styles */
+
+.new-review-form, .edit-review-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#rating-form {
+		margin-bottom: 15px;
+
+		label {
+			display: block;
+		}
+
 	}
 
 }

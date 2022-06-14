@@ -4,19 +4,51 @@
       <% if @book.image.attached? %>
         <%= image_tag @book.image, class:"book-show"%>
       <% end %>
+      <div class="links">
+        <%= link_to "Back", book_path(@book), class: "btn btn-custom"%>
+      </div>
+      <div class="book-info-review">
+        <%= render @book.reviews %>
+        <div class="links btn-group">
+           <%= link_to "Add Reviews", new_book_review_path(@book), class: "btn btn-custom" %>
+        </div>
+      </div>
     </div>
   
     <div class="col-md-8">
       <div class="book-info">
         <h1 class="book-title"><%= @book.title%></h1>
         <h3 class="book-category"><%= @book.category.name %></h3>
+        <div class="average-review-rating" data-score = <%= @average_review %>></div>
+         <span class="number-of-reviews">Based on <%= @book.reviews.count %> reviews</span>
         <p class="book-desc"><%= @book.description %></p>
         <h3 class="book-author"><span> From : </span><%= @book.author %></h3>
       </div>
       <div class="book-info-content">
-          <p class="book-content"><%= @book.content %></p>
-        </div>
+        <p class="book-content"><%= @book.content %></p>
+      </div>
     </div>
         
   </div>
 </div>
+
+<script>
+	$('.review-rating').raty({
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		},
+		path: '/assets/'
+	});
+</script>
+
+
+<script>
+	$('.average-review-rating').raty({
+		readOnly: true,
+		path: '/assets/',
+		score: function() {
+			return $(this).attr('data-score')
+		}
+	});
+</script>
